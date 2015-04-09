@@ -59,4 +59,7 @@ app.use(function(err, req, res, next) {
   });
 });
 
+console.log("starting scraper");
+scraper.scrapeAll();
+
 module.exports = app;

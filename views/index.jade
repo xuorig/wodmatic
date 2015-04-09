@@ -4,7 +4,7 @@ block content
   div(class='content')
     img.logo(src='/images/logo.png', alt='wodmatic-logo')
 
-    form.form-wodmatic(action="/login", method="post")
+    form.form-wodmatic(action="/users", method="post")
       h2.wodmatic-subtitle Step 1 - Pick your favourite wod type(s)
       label.wodmatic-label.checkbox-inline.
        <input type="checkbox" value="remember-me" /> Strength
@@ -14,6 +14,6 @@ block content
        <input type="checkbox" value="remember-me" /> Gymnastics
 
       h2.wodmatic-subtitle Step 2 - Enter your email address
-      input.wodmatic-email.form-control(type='email', placeholder='Enter email')
+      input.wodmatic-email.form-control(name='email', type='email', placeholder='Enter email')
 
-     button.btn.btn-large.btn-primary.send-button(type="submit") Send me some WODs!
+      button.btn.btn-large.btn-primary.send-button(type="submit") Send me some WODs!

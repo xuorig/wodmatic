@@ -9,6 +9,18 @@ var scrapeAll = function() {
   _getPageAndScrape('http://competitorstraining.com/', _scrapeCompetitorsTraining);
 }
 
+_createAndSaveWod = function(site, date, content, types) {
+  var newWod = new Wod({
+    site: site,
+    date: date,
+    content: content,
+    types: types
+  });
+  // .save(function(err) {
+  //   if (err) throw err;
+  // });
+}
+
 var _getPageAndScrape = function (url, scraperFunction) {
   request(url, function (error, response, html) {
     if (!error && response.statusCode == 200) {
@@ -33,15 +45,7 @@ var _scrapeCompetitorsTraining = function ($) {
     return !$(this).find('img').length;
   }).text();
 
-  var newWod = new Wod({
-    site: "Competitors Training",
-    date: wodDate,
-    content: wodContent,
-    types: ['S', 'C', 'G']
-  });
-
-  console.log(newWod);
-
+  return _createAndSaveWod('Competitors Training', wodDate, wodContent, ['S','G','C']);
 }
 
 var _scrapeCrossfitDotCom = function ($) {
@@ -49,15 +53,7 @@ var _scrapeCrossfitDotCom = function ($) {
   var blogPost = $('div.blogbody').eq(1);
   var wodContent = blogPost.find('h3').next().text();
 
-  var newWod = new Wod({
-    site: "Crossfit.com",
-    date: wodDate,
-    content: wodContent,
-    types: ['S', 'C', 'G']
-  });
-
-  console.log(newWod);
-
+  return _createAndSaveWod('Crossfit.com', wodDate, wodContent, ['S','G','C']);
 }
 
 var _scrapeOutlawWay = function ($) {
@@ -83,15 +79,7 @@ var _scrapeOutlawWay = function ($) {
 
   var wodContent = wodContentSplitted.slice(beginIndex).text();
 
-  var newWod = new Wod({
-    site: "The Outlaw Way",
-    date: wodDate,
-    content: wodContent,
-    types: ['S', 'C', 'G']
-  });
-
-  console.log(newWod);
+  return _createAndSaveWod('Outlaw Way', wodDate, wodContent, ['S','G','C']);
 }
 
-
-scrapeAll();
+module.exports = {'scrapeAll': scrapeAll};
