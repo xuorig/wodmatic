@@ -17,6 +17,10 @@
     "mongoose": "*",
     "cheerio": "*",
     "request": "*",
-    "underscore": "*"
+    "underscore": "*",
+    "email-templates": "*",
+    "ejs": "*",
+    "sendgrid": "*",
+    "async": "*"
   }
 }
