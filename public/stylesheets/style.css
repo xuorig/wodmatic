@@ -1,0 +1,64 @@
+html, body {
+
+}
+
+.animate-area { 
+  width: 100%;
+  height: 100%;
+  background: url('../images/bg.jpg');
+  background-position: 0px 0px;
+  background-repeat: repeat-x;
+  background-size: 100%;
+  -webkit-animation: animatedBackground 70s linear infinite;
+}
+
+.content {
+  width: 50%;
+  margin-top: 75px;
+  margin: 45px auto;
+  height: 500px;
+  background-color: rgb(194, 194, 194);
+  border-radius: 8px;
+  opacity: 0.9;
+  padding: 25px;
+  -webkit-box-shadow: 0 -5px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 -5px 8px rgba(0, 0, 0, 0.3);
+}
+
+.wodmatic-title {
+  margin-top: 0px;
+  font-size: 32px;
+  color: #3577BD;
+}
+
+.wodmatic-subtitle {
+  margin-top: 20px;
+  font-size: 24px;
+  color: #3577BD;
+}
+
+.wodmatic-label {
+  color: black;
+  font-size: 16px;
+}
+
+.wodmatic-email {
+  width: 325px !important;
+}
+
+.logo {
+  width: 75%;
+  margin-left: 74px;
+  margin-bottom: 20px;
+}
+
+.send-button {
+  width: 50%;
+  margin-left: 150px;
+  margin-top: 30px;
+}
+
+@-webkit-keyframes animatedBackground {
+  from { background-position: 0 25%; }
+  to { background-position: 100% 25%; }
+}
