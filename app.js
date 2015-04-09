@@ -5,7 +5,6 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose   = require('mongoose');
-var scraper    = require('./scraper');
 
 mongoose.connect(process.env.MONGOLAB_URI); // connect to our database
 
