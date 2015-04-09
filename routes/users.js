@@ -15,7 +15,7 @@ router.post('/', function(req, res, next) {
       res.status(400).send("Could not create user");
     } else {
       mailer.sendWelcomeEmail(email);
-      res.status(201).send("User Created");
+      res.render('registered', { title: 'wodmatic' });
     }
   })
   
