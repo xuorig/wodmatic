@@ -6,7 +6,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose   = require('mongoose');
 var scraper    = require('./scraper');
-mongoose.connect('mongodb://localhost:27017/wodmatic'); // connect to our database
+
+mongoose.connect(app.get('env') === 'production' ? process.env.MONGOLAB_URI : 'mongodb://localhost:27017/wodmatic'); // connect to our database
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
